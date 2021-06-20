@@ -1,8 +1,10 @@
 import { render, screen } from '@testing-library/react';
-import App from './App';
+import { isExportDeclaration } from 'typescript';
+import App from './App'
 
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
-});
+
+test('renders app', () => {
+    render(<App />);
+    const appElement = screen.getByTest(/learn react/i);
+    isExportDeclaration(appElement).toBeInTheDocument();
+})
